@@ -269,6 +269,30 @@ input.form-control:focus, textarea.form-control:focus {
 	box-shadow: none !important;
 	border-color: var(--purple-2);
 }
+
+.cover-wrapper {
+	text-align:center;
+	/* background: rgba(0,0,0, 0.8); */
+	color:#fff;
+	position:relative;
+	overflow:hidden;
+}
+.cover-wrapper .bg-video
+{
+	position:absolute;
+	z-index: 0;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	min-width: 100%;
+	min-height: 100%;
+	object-fit: cover;
+	mix-blend-mode: hard-light; opacity: 0.4;
+}
+.gold-filter {
+    filter: grayscale(100%) sepia(100%) saturate(160%) hue-rotate(345deg);
+}
+
 /* .img-fluid { display:block; max-width: 100%; } */
 /**/
 

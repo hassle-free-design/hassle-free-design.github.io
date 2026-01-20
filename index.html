@@ -23,8 +23,8 @@
 		<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 		<!--  -->
 
-		<link rel="stylesheet" type="text/css" href="./html/css/custom.css?v=1.0" >
-		<link rel="stylesheet" type="text/css" href="./html/css/extra.css?v=1.0" >
+		<link rel="stylesheet" type="text/css" href="./html/css/custom.css?v=1.1" >
+		<link rel="stylesheet" type="text/css" href="./html/css/extra.css?v=1.1" >
 	</head>
 	 
 	<body>
@@ -32,7 +32,8 @@
 			<!-- <div class="debugger flex-sc gap-2"><button class="btn btn-close btn-sm text-white px-1" onclick="$(this).parent().hide()">X</button></div> -->
 			
 			<!-- Header -->			
-			<header id="header" class="posr ovh">
+			<header id="header" class="posr ovh cover-wrapper">
+				
 				<div class="container">
 					<div class="flex-ss gap-4 flex-col-row jsc-between">
 						<div class="img-wrapper flex-1 text-center posr">
@@ -43,7 +44,7 @@
 						</div>
 						<div class="title-wrapper flex-2">
 							<h2 class="mb-0 name">Prescure Alexandru-Dan</h2>
-							<p class="mb-0 fz-24 fz-lg-28 light italic mb-4">Web Developer, &nbsp;UI Designer, &nbsp;Motion Graphics Designer</p>
+							<p class="mb-0 fz-24 fz-lg-28 light italic mb-4">Web Developer, &nbsp;UI/UX Designer, &nbsp;Motion Graphics Designer</p>
 							
 							<div class="flex-ss gap-3 flex-sm-wrap flex-col-sm-row" style="max-width: 850px;">
 								<div class="tag tag-blue tag-anim-intro"><span class="posr">Business Websites</span></div>
@@ -447,6 +448,36 @@
 				}, after);
 			}
 			
+		</script>
+		
+		<script type="text/javascript">
+			
+            let video = null;
+			
+			$(document).ready(function() 
+			{
+				let souceMP4 = "./html/videos/smoke-521707474.mp4";
+				let souceWEBM = "./html/videos/smoke-521707474.webm";
+				let poster = "./html/videos/smoke-521707474.jpg";
+				// let souceMP4 = "";
+				// let souceWEBM = "";
+				// let poster = "";
+
+				function CreateVideoElement() 
+				{
+					const main = $(".cover-wrapper");
+					let htmlSourceMP4Tag = '<source src="'+souceMP4+'" type="video/mp4">';
+					let htmlSouceWEBMTag = '<source src="'+souceWEBM+'" type="video/webm">';
+					let htmlVideoTag = '<video playsinline autoplay muted loop poster="'+poster+'" id="headerVideo" class="bg-video">'+htmlSourceMP4Tag + htmlSouceWEBMTag+'</video>';
+					// let htmlVideoWrapperTag = '<div class="bg-video gold-filter">'+htmlVideoTag+'</div>';
+	
+					//main.prepend( htmlVideoWrapperTag );
+					main.prepend( htmlVideoTag );
+					video = $('#headerVideo')[0];
+				}
+
+				CreateVideoElement();
+			});
 		</script>
 		
 	</body>
